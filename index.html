@@ -11,11 +11,51 @@
     <title>QstarAI</title>
 </head>
 <body>
+
+    <!------ LandingPage & Login/Signup -------->
+    <div class="wrapper">
+
+        <!------ Landing Page ----->
+        <div class="ladingPage">
+            <h2 class="head">QstarAI <i class="fa-solid fa-circle"></i></h2>
+            <div class="box">
+                <div class="lhs">
+                    <span id="element"></span>
+                </div>
+                <div class="rhs">
+                    <h1>Get started</h1>
+                    <div class="btnDiv">
+                        <button>Log in</button>
+                        <button>Sign up</button>
+                    </div>
+                    <h2><i class="fa-solid fa-earth-africa"></i>AIforALL</h2>
+                    <div class="links">
+                        <a href="">Terms of use</a>
+                        <span>|</span>
+                        <a href="">Privacy policy</a></div>
+                    </div>
+            </div>
+        </div>
+
+        <!----- Login/Signup ------>
+        <div class="loginSignup">
+
+        </div>
+    </div>
     
 
 
     <!-- Scripts -->
 
+    <!-- Typed Js CDN -->
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+        var typed = new Typed('#element', {
+          strings: ["Brainstorm names for an oranges cat we're adopting from the shelter","Suggest fun activities for a team-building day with remote employees","Plan a trip to see the northern lights in Norway","Help me pick a gift for my dad who loves fishing","Write a text asking a friend to be my plus-one at a wedding","Help me debug why the linked list appears empty after I've reversed it"],
+          typeSpeed: 30,
+          showCursor: false
+        });
+    </script>
     <!-- Font awesome cdn -->
     <script src="https://kit.fontawesome.com/36329582a6.js" crossorigin="anonymous"></script>
     <!-- Main JS -->
