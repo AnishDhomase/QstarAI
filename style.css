@@ -8,185 +8,399 @@
     font-family: 'Poppins', sans-serif;
 }
 body{
-    color: white;
+    overflow-x: hidden;
+    position: relative;
 }
 a{
-    color: white;
+    text-decoration: none;
+}
+a:hover{
+    cursor: pointer;
+}
+.notActive{
+    display: none !important;
+}
+.clrBlue{
+    color: #421CEF !important;
+}
+.borderBlue{
+    border-color: #421CEF !important; 
 }
 
-/*======== Lnding Page =========*/
-.wrapper{
-    height: 100vh;
-    width: 100vw;
-    background-color: black;
+/*=============== ScrollBar ================ */
+::-webkit-scrollbar {
+    width: 10px;
 }
-.ladingPage{
-    padding: 20px 70px;
-    width: 100%;
+::-webkit-scrollbar-track {
+    background: #000000;
+}
+  
+::-webkit-scrollbar-thumb{
+    background: #888;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/*============== Landing Page =================*/
+.wrapperOne{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 111;
+    height: 100vh;
+    min-height: 100vh;
+    width: 100vw;
+    /* background-color: black; */
+}
+.landingPage{
     height: 100%;
+    min-height: 100vh;
+    width: 100%;
     max-width: 1500px;
+    padding: 20px 70px;
     margin: 0 auto;
+
+    color: white;
     background-image: radial-gradient(
         farthest-corner at 40px 40px,
         rgb(3, 2, 2) 30%,rgb(48, 42, 140) 60%,rgb(24, 24, 66) 100%
     );
 
 }
-.ladingPage h2.head{
-    font-size: 25px;
+.landingPage h2.head{
     padding: 20px 0;
+    font-size: 25px;
 }
-.ladingPage h2.head i{
+.landingPage h2.head i{
     font-size: 20px;
 }
-.ladingPage .box{
-    display: flex;
+.landingPage .box{
     margin-top: 50px;
+    display: flex;
 }
-.ladingPage .box .lhs,
-.ladingPage .box .rhs{
+.landingPage .box .lhs,
+.landingPage .box .rhs{
     width: 50%;
     height: 400px;
 }
-.ladingPage .box .lhs{
+.landingPage .box .lhs{
     padding-right: 20px;
     padding-top: 120px;
 }
-.ladingPage .box .lhs span{
+.landingPage .box .lhs span{
     display: inline-block;
     width: 90%;
     font-size: 35px;
     font-weight: 500;
 }
-.ladingPage .box .rhs{
-    max-width: 500px;
-    background-color: rgba(15, 11, 11, 0.816);
-    backdrop-filter: blur(30px);
+.landingPage .box .rhs{
     text-align: center;
-    border-radius: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.064);
+    max-width: 500px;
     padding: 20px 40px;
+
+    border-radius: 10px;
+    backdrop-filter: blur(30px);
+    border: 1px solid rgba(255, 255, 255, 0.064);
+    background-color: rgba(15, 11, 11, 0.816);
 }
-.ladingPage .box .rhs h1{
-    font-size: 33px;
+.landingPage .box .rhs h1{
     margin-bottom: 10px;
+    font-size: 33px;
 }
-.ladingPage .box .rhs .btnDiv{
+.landingPage .box .rhs .btnDiv{
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 10px;
 }
-.ladingPage .box .rhs .btnDiv button{
+.landingPage .box .rhs .btnDiv button{
     width: 50%;
-    /* margin: 0 5px; */
-    outline: none;
-    border: none;
+    height: 50px;
     font-size: 18px;
     font-weight: 500;
-    height: 50px;
-    /* padding: 10px 70px; */
+    
     border-radius: 5px;
     background-color: #421CEF;
     color: white;
+    outline: none;
+    border: none;
 }
-.ladingPage .box .rhs .btnDiv button:hover{
-    background-color: blue;
+.landingPage .box .rhs .btnDiv button:hover{
     cursor: pointer;
+    background-color: blue;
 }
-.ladingPage .box .rhs h2{
+.landingPage .box .rhs h2{
+    margin-top: 180px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 18px;
     font-weight: 500;
-    margin-top: 180px;
 }
-.ladingPage .box .rhs h2 i{
-    font-size: 25px;
+.landingPage .box .rhs h2 i{
     margin-right: 5px;
+    font-size: 25px;
 }
-.ladingPage .box .rhs .links{
+.landingPage .box .rhs .links{
     margin-top: 20px;
     font-size: 12px;
     font-weight: 200;
 }
-.ladingPage .box .rhs .links a{
+.landingPage .box .rhs .links a{
     color: rgb(201, 200, 200);
 }
-.ladingPage .box .rhs .links span{
-    margin: 0 10px;
+.landingPage .box .rhs .links span{
+    padding: 0 10px;
 }
 
 @media screen and (max-width:1000px){
-    .ladingPage .box .lhs{
+    .landingPage .box .lhs{
         padding-right: 10px;
         padding-top: 80px;
     }
-    .ladingPage .box .rhs h1{
+    .landingPage .box .rhs h1{
         font-size: 27px;
         margin-bottom: 10px;
     }
 }
 @media screen and (max-width:800px){
-    .ladingPage .box .lhs span{
+    .landingPage .box .lhs span{
         font-size: 30px;
     }
 }
 @media screen and (max-width:750px){
-    .ladingPage .box{
+    .wrapperOne{
+        height: auto;
+    }
+    .landingPage .box{
         flex-direction: column;
         align-items: center;
         margin-top: 0;
     }
-    .ladingPage .box .lhs{
+    .landingPage .box .lhs{
         width: 100%;
         height: 200px;
         padding-right: 0;
         padding-top: 20px;
     }
-    .ladingPage .box .rhs{
-        width: 100%;
-    }
-    .wrapper{
-        height: auto;
-    }
-    .ladingPage .box .lhs span{
+    .landingPage .box .lhs span{
         font-size: 27px;
+    }
+    .landingPage .box .rhs{
+        width: 100%;
     }
 }
 @media screen and (max-width:550px){
-    .ladingPage{
+    .landingPage{
         padding: 20px 30px;
     }
-    .ladingPage .box .lhs span{
+    .landingPage .box .lhs span{
         font-size: 23px;
     }
     
 }
 @media screen and (max-width:450px){
-    .ladingPage .box .rhs .btnDiv{
+    .landingPage{
+        padding: 20px 30px 50px 30px;
+    }
+    .landingPage .box .rhs{
+        height: 440px;
+        padding: 20px 20px;
+    } 
+    .landingPage .box .rhs .btnDiv{
         display: flex;
         flex-direction: column;
-        /* justify-content: center;
-        align-items: center; */
         gap: 10px;
     }
-    .ladingPage .box .rhs .btnDiv button{
+    .landingPage .box .rhs h1{
+        font-size: 23px;
+    }
+    .landingPage .box .rhs .btnDiv button{
         width: 100%;
         height: 45px;
     }
-    .ladingPage .box .rhs h1{
-        font-size: 23px;
+}
+/*============================================*/
+
+
+/* =========== Login/signup Page ====================*/
+.wrapperTwo{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 0;
+    color: white;
+    background-image: radial-gradient(
+        farthest-corner at 40px 40px,
+        rgb(3, 2, 2) 30%,rgb(7, 4, 50) 60%,rgb(8, 8, 43) 100%
+    );
+}
+.wrapperTwo .goBack{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.325);
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+.wrapperTwo .goBack:hover{
+    background-color: rgba(255, 255, 255, 0.092);
+    cursor: pointer;
+}
+
+.loginSignup{
+    margin: auto !important;
+    width: 360px;
+    padding: 20px;
+}
+.loginSignup .logo,
+.loginSignup .head{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.loginSignup .logo img{
+    height: 25px;
+}
+.loginSignup .head h1{
+    font-size: 25px;
+    margin-top: 100px;
+    margin-bottom: 15px;
+}
+.loginSignup .email fieldset{
+    font-size: 12px;
+    width: 100%;
+    border-radius: 6px;
+    padding: 0 15px;
+    padding-bottom: 8px;
+    border: 1.5px solid white;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+} 
+.loginSignup .email fieldset:hover{
+    cursor: text;
+}
+.loginSignup .email fieldset legend{
+    margin-left: -8px;
+    padding: 0 3px;
+    color: white;
+} 
+.loginSignup .email fieldset input{
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: white;
+    width: 100%;
+
+} 
+.loginSignup .email fieldset input::placeholder{
+    color: grey;
+} 
+.loginSignup .btn button{
+    width: 100%;
+    height: 50px;
+    font-size: 15px;
+    font-weight: 500;
+    
+    border-radius: 5px;
+    background-color: #421CEF;
+    color: white;
+    outline: none;
+    border: none;
+}
+.loginSignup .btn button:hover{
+    cursor: pointer;
+    background-color: blue;
+}
+.loginSignup .login{
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+    font-size: 12px;
+    font-weight: 500;
+}
+.loginSignup .login a{
+    color: #421CEF;
+}
+.loginSignup .or{
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.loginSignup .or span.line{
+    background-color: grey;
+    height: 1.2px;
+    width: 100%;
+}
+.loginSignup .or span.txt{
+    padding: 0 13px;
+    font-size: 13px;
+}
+.loginSignup .comp{
+    margin: 10px 0;
+    font-size: 15px;
+    border: 1px solid rgba(128, 128, 128, 0.558);
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-weight: 500;
+}
+.loginSignup .comp:hover{
+    background-color: rgba(242, 234, 234, 0.326);
+    cursor: pointer;
+}
+.loginSignup .comp i{
+    margin-right: 15px;
+}
+.loginSignup .footer{
+    margin-top: 20px;
+    font-size: 12px;
+    font-weight: 400;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.loginSignup .footer a{
+    color: #421CEF;
+}
+.loginSignup .footer span{
+    padding: 0 10px;
+    color: grey;
+}
+@media screen and (max-width:370px) {
+    .loginSignup{
+        padding: 10px;
     }
-    .ladingPage .box .rhs{
-        padding: 20px 20px;
-        height: 440px;
-    } 
-    .ladingPage{
-        padding: 20px 30px 50px 30px;
+    .loginSignup .head h1{
+        font-size: 22px;
+    }
+    .loginSignup .comp{
+        margin: 10px 0;
+        font-size: 14px;
+        padding: 10px 12px;
     }
 }
-/*==============================*/
+/* ================================================= */
+
+
+/* ============ Main ============================== */
+.main{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: grey;
+}
+/* ================================================ */
 
 
