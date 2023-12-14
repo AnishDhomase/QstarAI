@@ -6,10 +6,12 @@
     box-sizing: border-box;
     user-select: none;
     font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease;
 }
 body{
     overflow-x: hidden;
     position: relative;
+    background-color: #343541;
 }
 a{
     text-decoration: none;
@@ -26,21 +28,11 @@ a:hover{
 .borderBlue{
     border-color: #421CEF !important; 
 }
-
+.darken{
+    filter: brightness(35%);
+}
 /*=============== ScrollBar ================ */
-::-webkit-scrollbar {
-    width: 10px;
-}
-::-webkit-scrollbar-track {
-    background: #000000;
-}
-  
-::-webkit-scrollbar-thumb{
-    background: #888;
-}
-::-webkit-scrollbar-thumb:hover {
-    background: #555;
-}
+/* ========================================= */
 
 /*============== Landing Page =================*/
 .wrapperOne{
@@ -399,8 +391,152 @@ a:hover{
     z-index: 0;
     height: 100vh;
     width: 100vw;
-    background-color: grey;
+    display: flex;
+}
+.main .left{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    height: 100%;
+    width: 250px;
+    background-color: black;
+}
+.main .left.translateLeft{
+    transform: translate(-250px);
+}
+.main .left i.arrow{
+    position: absolute;
+    top: 48%;
+    right: -15px;
+    color: rgb(103, 99, 99);
+    font-size: 22px;
+}
+.main .left i.fa-chevron-left,
+.main .left i.fa-chevron-right{
+    font-size: 15px;
+    padding: 4px 0;
+}
+.main .left i.arrow:hover{
+    color: #dadae1;
+    cursor: pointer;
+}
+.main .left .upBox{
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 30px;
+}
+.main .left button{
+    position: relative;
+    border-radius: 5px;
+    padding: 5px 7px;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    color: white;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    font-weight: 500;
+}
+.main .left button:hover{
+    background-color: #202123;
+    cursor: pointer;
+}
+.main .left button.new.mobile{
+    transform: translateX(300px) !important;
+}
+.main .left button.new img{
+    margin-right: 7px;
+    height: 28px;
+}
+.main .left button.new i{
+    position: absolute;
+    right: 7px;
+}
+.main .left button.new.nohide{
+    transform: translate(250px);
+    border: 1px solid rgba(255, 255, 255, 0.143);
+}
+.main .left .upBox .history{
+    height: 450px;
+    /* background-color: #2d2b2b; */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.main .left .upBox .history .content{
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.main .left .upBox .history .content::-webkit-scrollbar {
+    width: 4px;
+ }
+.main .left .upBox .history .content::-webkit-scrollbar-track {
+    background: #000000;
+}
+  
+.main .left .upBox .history .content::-webkit-scrollbar-thumb{
+    background: #191919;
+}
+.main .left .upBox .history .content::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+.main .left .upBox .history .content div{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    font-size: 14px;
+    color: white;
+    padding: 6px 7px !important;
+    height: 34px;
+    border-radius: 5px;
+}
+.main .left .upBox .history .content div:hover{
+    background-color: #202123;
+    cursor: pointer;
+}
+.main .left .upBox .history .title{
+    font-size: 12px;
+    font-weight: 700;
+    color: #636363;
+    padding: 4px 7px;
+    padding-bottom: 12px;
+}
+.main .left button.user img{
+    margin-right: 7px;
+    height: 28px;
+}
+.main .right{
+    height: 100%;
+    width: calc(100% - 250px);
+    background-color: #343541;
+}
+@media screen and (max-width:450px) {
+    .main .left i.arrow{
+        top: 27px;
+        font-size: 22px;
+    }
+    .main .left i.fa-chevron-left{
+        font-size: 15px;
+        padding: 4px 0;
+    }
+    .main .left i.fa-chevron-right,
+    .main .left i.fa-bars{
+        right: -45px;
+        font-size: 15px;
+        border: 1px solid rgba(255, 255, 255, 0.143);
+        padding: 5px 8px;
+        border-radius: 5px;
+    }
 }
 /* ================================================ */
+
 
 

@@ -8,12 +8,27 @@
     <link rel="stylesheet" href="style.css">
     <!-- Favicon -->
     <link rel="icon" href="star-of-life.png">
+    <!-- Scripts -->
+
+    <!-- Typed Js CDN -->
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+        var typed = new Typed('#element', {
+          strings: ["Brainstorm names for an oranges cat we're adopting from the shelter","Suggest fun activities for a team-building day with remote employees","Plan a trip to see the northern lights in Norway","Help me pick a gift for my dad who loves fishing","Write a text asking a friend to be my plus-one at a wedding","Help me debug why the linked list appears empty after I've reversed it"],
+          typeSpeed: 30,
+          showCursor: false
+        });
+    </script>
+    <!-- Font awesome cdn -->
+    <script defer src="https://kit.fontawesome.com/36329582a6.js" crossorigin="anonymous"></script>
+    <!-- Main JS -->
+    <script defer src="script.js"></script>
     <title>QstarAI</title>
 </head>
 <body>
 
     <!------ LandingPage-------->
-    <div class="wrapperOne page">
+    <div class="wrapperOne page notActive">
 
         <!------ Landing Page ----->
         <div class="landingPage">
@@ -40,8 +55,9 @@
     </div>
     <!----------------------- -->
 
+
     <!------- Login/Signup ------->
-    <div class="wrapperTwo page">
+    <div class="wrapperTwo page notActive">
         <span class="goBack"><i class="fa-solid fa-arrow-left" style="color: #ffffff;"></i></span>
         <!----- Login/Signup ------>
         <div class="loginSignup">
@@ -89,25 +105,30 @@
 
     <!-- ------- Main ------------>
     <div class="main page">
+        <div class="left">
+            <!-- <i class="fa-solid fa-chevron-left arrow"></i> -->
+            <i class="fa-solid fa-grip-lines-vertical arrow"></i>
+            <div class="upBox">
+                <button class="new">
+                    <img src="star-of-life_bgBlue_circle.png" alt="">
+                    <span>New chat</span>
+                    <i class="fa-solid fa-plus" style="color: #ffffff;"></i>
+                </button>
+                <div class="history">
+                    <span class="title">History</span>
+                    <div class="content">
+                        <div>Lorem ipsum dolor sitttttttt</div>
+                        <div>Lorem ipsum dolor sittttt</div>
+                        <div>Lorem ipsum dolor sittttt</div>  
+                    </div>
+                </div>
+            </div>
+            <button class="user"><img src="user.png" alt=""><span>User Name</span></button>
+        </div>
+        <div class="right"></div>
     </div>
     <!-- ---------------------- -->
     
 
-
-    <!-- Scripts -->
-
-    <!-- Typed Js CDN -->
-    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-    <script>
-        var typed = new Typed('#element', {
-          strings: ["Brainstorm names for an oranges cat we're adopting from the shelter","Suggest fun activities for a team-building day with remote employees","Plan a trip to see the northern lights in Norway","Help me pick a gift for my dad who loves fishing","Write a text asking a friend to be my plus-one at a wedding","Help me debug why the linked list appears empty after I've reversed it"],
-          typeSpeed: 30,
-          showCursor: false
-        });
-    </script>
-    <!-- Font awesome cdn -->
-    <script src="https://kit.fontawesome.com/36329582a6.js" crossorigin="anonymous"></script>
-    <!-- Main JS -->
-    <script src="script.js"></script>
 </body>
 </html>
