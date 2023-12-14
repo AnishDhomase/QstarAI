@@ -24,6 +24,7 @@ const RightBox = document.querySelector(".main .right");
 const LeftUpBox = document.querySelector(".main .left .upBox");
 const LeftAccBtn = document.querySelector(".main .left button.user");
 const LeftNewBtn = document.querySelector(".main .left button.new");
+const RightSuggDivArr = document.querySelectorAll(".main .right .suggestion .roww div");
 // ========================================================================
 
 
@@ -94,8 +95,8 @@ Finput.addEventListener("focusout",()=>{
 
 // ======= Main page functionality ============================
 // Collapser
-
 ArrowCollapser.addEventListener("mouseover",()=>{
+    if(window.innerWidth > 450)
     if(ArrowCollapser.classList.contains("fa-grip-lines-vertical")){
         ArrowCollapser.classList.replace("fa-grip-lines-vertical","fa-chevron-left");
         LeftUpBox.classList.add("darken");
@@ -103,42 +104,131 @@ ArrowCollapser.addEventListener("mouseover",()=>{
     } 
 })
 ArrowCollapser.addEventListener("mouseout",()=>{
+    if(window.innerWidth > 450)
     if(ArrowCollapser.classList.contains("fa-chevron-left")){
         ArrowCollapser.classList.replace("fa-chevron-left","fa-grip-lines-vertical");
         LeftUpBox.classList.remove("darken");
         LeftAccBtn.classList.remove("darken");
     }
 })
+// ArrowCollapser.addEventListener("click",()=>{
+//     if(ArrowCollapser.classList.contains("fa-chevron-left")){
+//         // if(window.innerWidth <= 450){
+//         //     ArrowCollapser.classList.replace("fa-chevron-left","fa-bars");   
+//         // }
+//         // else{
+//             ArrowCollapser.classList.replace("fa-chevron-left","fa-chevron-right");
+//         // }
+//         LeftBox.classList.add("translateLeft");
+//         LeftUpBox.classList.remove("darken");
+//         LeftAccBtn.classList.remove("darken");
+
+//         LeftNewBtn.classList.add("nohide");
+//         // if(window.innerWidth <= 450){
+//         //     LeftNewBtn.classList.add("mobile");
+//         // }
+
+//         RightBox.classList.add("translateLeft");
+//     }
+//     else{
+//         // if(window.innerWidth <= 450){
+//         //     ArrowCollapser.classList.replace("fa-bars","fa-grip-lines-vertical");   
+//         // }
+//         // else
+//             ArrowCollapser.classList.replace("fa-chevron-right","fa-grip-lines-vertical");
+//         LeftBox.classList.remove("translateLeft");
+
+//         LeftNewBtn.classList.remove("nohide");
+//         // if(window.innerWidth <= 450){
+//         //     LeftNewBtn.classList.remove("mobile");
+//         // }
+
+//         RightBox.classList.remove("translateLeft");
+
+//     }
+// })
+
 ArrowCollapser.addEventListener("click",()=>{
-    if(ArrowCollapser.classList.contains("fa-chevron-left")){
-        if(window.innerWidth <= 450){
-            ArrowCollapser.classList.replace("fa-chevron-left","fa-bars");   
+    if(window.innerWidth <= 450){
+        if(ArrowCollapser.classList.contains("fa-grip-lines-vertical")){
+            // 
+            ArrowCollapser.classList.replace("fa-grip-lines-vertical","fa-bars");   
+            LeftNewBtn.classList.add("mobile");
+
+            LeftBox.classList.add("translateLeft");
+            LeftUpBox.classList.remove("darken");
+            LeftAccBtn.classList.remove("darken");
+            LeftNewBtn.classList.add("nohide");
+            RightBox.classList.add("translateLeft");
+            setTimeout(()=>{
+                RightBox.classList.remove("hide");
+            },410);
         }
         else{
-            ArrowCollapser.classList.replace("fa-chevron-left","fa-chevron-right");
-        }
-        LeftBox.classList.add("translateLeft");
-        LeftNewBtn.classList.add("nohide");
-        LeftUpBox.classList.remove("darken");
-        LeftAccBtn.classList.remove("darken");
-        if(window.innerWidth <= 450){
-            LeftNewBtn.classList.add("mobile");
+            //
+            ArrowCollapser.classList.replace("fa-bars","fa-grip-lines-vertical");   
+            LeftNewBtn.classList.remove("mobile");
+    
+            LeftBox.classList.remove("translateLeft");
+            LeftNewBtn.classList.remove("nohide");
+            RightBox.classList.remove("translateLeft");
+            RightBox.classList.add("hide");
         }
     }
     else{
-        if(window.innerWidth <= 450){
-            ArrowCollapser.classList.replace("fa-bars","fa-grip-lines-vertical");   
+        if(ArrowCollapser.classList.contains("fa-chevron-left")){
+
+            ArrowCollapser.classList.replace("fa-chevron-left","fa-chevron-right");
+
+            LeftBox.classList.add("translateLeft");
+            LeftUpBox.classList.remove("darken");
+            LeftAccBtn.classList.remove("darken");
+            LeftNewBtn.classList.add("nohide");
+            RightBox.classList.add("translateLeft");
         }
-        else
+        else{
             ArrowCollapser.classList.replace("fa-chevron-right","fa-grip-lines-vertical");
-        LeftBox.classList.remove("translateLeft");
-        LeftNewBtn.classList.remove("nohide");
+            LeftBox.classList.remove("translateLeft");
+    
+            LeftNewBtn.classList.remove("nohide");
+            RightBox.classList.remove("translateLeft");
+        }
+    } 
+})
+RightBox.addEventListener("click",()=>{
+    if(!LeftBox.classList.contains("translateLeft")){
         if(window.innerWidth <= 450){
-            LeftNewBtn.classList.remove("mobile");
+            // 
+            ArrowCollapser.classList.replace("fa-grip-lines-vertical","fa-bars");   
+            LeftNewBtn.classList.add("mobile");
+    
+            LeftBox.classList.add("translateLeft");
+            LeftUpBox.classList.remove("darken");
+            LeftAccBtn.classList.remove("darken");
+            LeftNewBtn.classList.add("nohide");
+            RightBox.classList.add("translateLeft");
+            setTimeout(()=>{
+                RightBox.classList.remove("hide");
+            },410);
         }
     }
 })
 
+// Suggest div hover
+RightSuggDivArr.forEach((divv)=>{
+    divv.addEventListener("mouseover",()=>{
+        const I = divv.querySelector("i");
+        I.classList.add("active");
+    })
+    divv.addEventListener("mouseout",()=>{
+        const I = divv.querySelector("i");
+        I.classList.remove("active");
+    })
+})
+if(window.innerWidth <= 450){
+    RightBox.classList.add("hide");
+}
+// ===========================================================
 
-// ============================================================
+
 

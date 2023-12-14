@@ -22,6 +22,9 @@ a:hover{
 .notActive{
     display: none !important;
 }
+.active{
+    display: block !important;
+}
 .clrBlue{
     color: #421CEF !important;
 }
@@ -395,6 +398,7 @@ a:hover{
 }
 .main .left{
     position: relative;
+    z-index: 111111;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -405,6 +409,7 @@ a:hover{
 }
 .main .left.translateLeft{
     transform: translate(-250px);
+    /* z-index: 10000; */
 }
 .main .left i.arrow{
     position: absolute;
@@ -412,6 +417,7 @@ a:hover{
     right: -15px;
     color: rgb(103, 99, 99);
     font-size: 22px;
+    z-index: 1000000000;
 }
 .main .left i.fa-chevron-left,
 .main .left i.fa-chevron-right{
@@ -459,6 +465,8 @@ a:hover{
     right: 7px;
 }
 .main .left button.new.nohide{
+    position: relative;
+    z-index: 111111;
     transform: translate(250px);
     border: 1px solid rgba(255, 255, 255, 0.143);
 }
@@ -517,7 +525,137 @@ a:hover{
     height: 100%;
     width: calc(100% - 250px);
     background-color: #343541;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: flex-end; */
+    justify-content: space-between;
+    /*  */
+    gap: 15px;
+    align-items: center;
+    padding: 0 20px;
+    padding-top: 90px;
+    transition: opacity 0s ease;
 }
+.main .right.translateLeft{
+    position: fixed;
+    /* transform: translate(-250px); */
+    width: 100vw !important;
+    transition: width 0.5s ease;
+}
+.main .right.hide{
+    opacity: 0;
+}
+.main .right .loadWindow{
+    width: 100%;
+    max-width: 690px;
+    height: 100%;
+    background-color: #C5C5D2;
+}
+.main .right .logoHead{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 120px;
+}
+.main .right .logoHead img{
+    width: 65px;
+}
+.main .right .logoHead h3{
+    font-size: 20px;
+    color: white;
+}
+.main .right .suggestion{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+}
+.main .right .suggestion .roww{
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+.main .right .suggestion .roww div{
+    width: 50%;
+    max-width: 320px;
+    position: relative;
+    border: 1.3px solid rgba(255, 255, 255, 0.143);
+    border-radius: 10px;
+    padding: 15px;
+    color: #838390;
+}
+.main .right .suggestion .roww div:hover{
+    background-color: #40414F;
+    cursor: pointer;
+}
+.main .right .suggestion .roww div h6.top{
+    color: #C5C5D2;
+}
+.main .right .suggestion .roww i{
+    border-radius: 7px;
+    background-color: #202123;
+    color: white;
+    font-size: 10px;
+    position: absolute;
+    top: 35%;
+    right: 17px;
+    padding: 6px 6px;
+    display: none;
+}
+.main .right  .inputBox{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 9px;
+    width: 100%;
+    /* height: 100%; */
+    max-width: 690px;
+    margin-top: 13px;
+    padding-bottom: 10px;
+}
+.main .right  .inputBox .inp{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+.main .right  .inputBox .inp i{
+    font-size: 15px;
+    position: absolute;
+    background-color: white;
+    border-radius: 8px;
+    padding: 6px 6px;
+}
+.main .right  .inputBox .inp i:hover{
+    cursor: pointer;
+}
+.main .right  .inputBox .inp i.fa-microphone{
+    left: 15px;
+    padding: 6px 8.5px;
+    
+}
+.main .right  .inputBox .inp i.fa-paper-plane{
+    right: 15px;
+}
+.main .right  .inputBox .inp textarea{
+    border: none;
+    outline: none;
+    width: 100%;
+    padding: 13px 55px;
+    border-radius: 14px;
+    background-color: transparent;
+    border: 1.3px solid rgba(255, 255, 255, 0.143);
+    color: white;
+    resize: vertical;
+}
+.main .right  .inputBox h6{
+    color: #C5C5D2;
+    font-size: 10px;
+    font-weight: 500;
+} 
 @media screen and (max-width:450px) {
     .main .left i.arrow{
         top: 27px;
@@ -535,6 +673,31 @@ a:hover{
         padding: 5px 8px;
         border-radius: 5px;
     }
+}
+@media screen and (max-width:850px){
+    .main .right .suggestion .roww{
+        flex-direction: column;
+        justify-content: center;
+        gap: 8px;
+    }
+    .main .right .suggestion .roww div{
+        width: 100%;
+        max-width: 700px;
+        position: relative;
+        border: 1.3px solid rgba(255, 255, 255, 0.143);
+        border-radius: 10px;
+        padding: 15px;
+        color: #838390;
+    }
+}
+@media screen and (max-width:450px){
+    .main .right .suggestion .roww:first-child{
+        display: none;
+    }
+    .main .right  .inputBox h6{
+        font-size: 8px;
+        font-weight: 500;
+    } 
 }
 /* ================================================ */
 
