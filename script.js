@@ -228,6 +228,13 @@ RightSuggDivArr.forEach((divv)=>{
 if(window.innerWidth <= 450){
     RightBox.classList.add("hide");
 }
+// Auto resize textarea
+const textarea = document.querySelector("textarea");
+textarea.addEventListener("keyup", e =>{
+    textarea.style.height = "auto";
+    let scHeight = e.target.scrollHeight;
+    textarea.style.height = `${scHeight}px`;
+})
 // ===========================================================
 
 
