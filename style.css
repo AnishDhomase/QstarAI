@@ -1,5 +1,11 @@
+/* Global */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
+:root{
+    --colorBlue : #421CEF;
+    --colorBgtheme : #343541;
+    
+}
 *{
     margin: 0;
     padding: 0;
@@ -11,33 +17,35 @@
 body{
     overflow-x: hidden;
     position: relative;
-    background-color: #343541;
+    background-color: var(--colorBgtheme);
 }
+
 a{
     text-decoration: none;
 }
 a:hover{
     cursor: pointer;
 }
+
 .notActive{
     display: none !important;
 }
 .active{
     display: block !important;
 }
+
 .clrBlue{
-    color: #421CEF !important;
+    color: var(--colorBlue) !important;
 }
 .borderBlue{
-    border-color: #421CEF !important; 
+    border-color: var(--colorBlue) !important; 
 }
 .darken{
     filter: brightness(35%);
 }
-/*=============== ScrollBar ================ */
-/* ========================================= */
+/* ***************************************************************************** */
 
-/*============== Landing Page =================*/
+/*=================================== Landing Page =============================*/
 .wrapperOne{
     position: absolute;
     top: 0;
@@ -63,6 +71,7 @@ a:hover{
     );
 
 }
+/* ************ Logo Head */
 .landingPage h2.head{
     padding: 20px 0;
     font-size: 25px;
@@ -70,6 +79,7 @@ a:hover{
 .landingPage h2.head i{
     font-size: 20px;
 }
+/* ************ L-R Box  */
 .landingPage .box{
     margin-top: 50px;
     display: flex;
@@ -79,6 +89,7 @@ a:hover{
     width: 50%;
     height: 400px;
 }
+/* *********** Left Box */
 .landingPage .box .lhs{
     padding-right: 20px;
     padding-top: 120px;
@@ -89,6 +100,7 @@ a:hover{
     font-size: 35px;
     font-weight: 500;
 }
+/* ********** Right Box */
 .landingPage .box .rhs{
     text-align: center;
     max-width: 500px;
@@ -115,11 +127,11 @@ a:hover{
     font-size: 18px;
     font-weight: 500;
     
-    border-radius: 5px;
-    background-color: #421CEF;
-    color: white;
     outline: none;
     border: none;
+    border-radius: 5px;
+    background-color: var(--colorBlue);
+    color: white;
 }
 .landingPage .box .rhs .btnDiv button:hover{
     cursor: pointer;
@@ -216,10 +228,32 @@ a:hover{
         height: 45px;
     }
 }
-/*============================================*/
+/*=========================================================================*/
 
 
-/* =========== Login/signup Page ====================*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ============================ Login/signup Page ====================*/
 .wrapperTwo{
     position: absolute;
     top: 0;
@@ -236,13 +270,14 @@ a:hover{
         rgb(3, 2, 2) 30%,rgb(7, 4, 50) 60%,rgb(8, 8, 43) 100%
     );
 }
+/* ************ Back button */
 .wrapperTwo .goBack{
+    padding: 10px 15px;
     position: absolute;
     top: 20px;
     left: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.325);
-    padding: 10px 15px;
     border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.325);
 }
 .wrapperTwo .goBack:hover{
     background-color: rgba(255, 255, 255, 0.092);
@@ -264,20 +299,20 @@ a:hover{
     height: 25px;
 }
 .loginSignup .head h1{
-    font-size: 25px;
     margin-top: 100px;
     margin-bottom: 15px;
+    font-size: 25px;
 }
 .loginSignup .email fieldset{
-    font-size: 12px;
     width: 100%;
-    border-radius: 6px;
+    margin-bottom: 20px;
     padding: 0 15px;
     padding-bottom: 8px;
-    border: 1.5px solid white;
-    margin-bottom: 20px;
     display: flex;
     align-items: center;
+    font-size: 12px;
+    border-radius: 6px;
+    border: 1.5px solid white;
 } 
 .loginSignup .email fieldset:hover{
     cursor: text;
@@ -288,11 +323,11 @@ a:hover{
     color: white;
 } 
 .loginSignup .email fieldset input{
+    width: 100%;
     border: none;
     outline: none;
     background-color: transparent;
     color: white;
-    width: 100%;
 
 } 
 .loginSignup .email fieldset input::placeholder{
@@ -304,11 +339,11 @@ a:hover{
     font-size: 15px;
     font-weight: 500;
     
-    border-radius: 5px;
-    background-color: #421CEF;
-    color: white;
     outline: none;
     border: none;
+    border-radius: 5px;
+    background-color: var(--colorBlue);
+    color: white;
 }
 .loginSignup .btn button:hover{
     cursor: pointer;
@@ -323,7 +358,7 @@ a:hover{
     font-weight: 500;
 }
 .loginSignup .login a{
-    color: #421CEF;
+    color: var(--colorBlue);
 }
 .loginSignup .or{
     margin-bottom: 15px;
@@ -332,9 +367,9 @@ a:hover{
     justify-content: center;
 }
 .loginSignup .or span.line{
-    background-color: grey;
     height: 1.2px;
     width: 100%;
+    background-color: grey;
 }
 .loginSignup .or span.txt{
     padding: 0 13px;
@@ -342,11 +377,11 @@ a:hover{
 }
 .loginSignup .comp{
     margin: 10px 0;
-    font-size: 15px;
-    border: 1px solid rgba(128, 128, 128, 0.558);
     padding: 10px 15px;
-    border-radius: 5px;
+    font-size: 15px;
     font-weight: 500;
+    border: 1px solid rgba(128, 128, 128, 0.558);
+    border-radius: 5px;
 }
 .loginSignup .comp:hover{
     background-color: rgba(242, 234, 234, 0.326);
@@ -356,15 +391,15 @@ a:hover{
     margin-right: 15px;
 }
 .loginSignup .footer{
-    margin-top: 20px;
-    font-size: 12px;
-    font-weight: 400;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 20px;
+    font-size: 12px;
+    font-weight: 400;
 }
 .loginSignup .footer a{
-    color: #421CEF;
+    color: var(--colorBlue);
 }
 .loginSignup .footer span{
     padding: 0 10px;
@@ -383,10 +418,27 @@ a:hover{
         padding: 10px 12px;
     }
 }
-/* ================================================= */
+/* ============================================================== */
 
 
-/* ============ Main ============================== */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ========================== Main ============================== */
 .main{
     position: absolute;
     top: 0;
@@ -395,7 +447,9 @@ a:hover{
     height: 100vh;
     width: 100vw;
     display: flex;
+    overflow:hidden;
 }
+/* *********** Left Box */
 .main .left{
     position: relative;
     z-index: 111111;
@@ -409,7 +463,6 @@ a:hover{
 }
 .main .left.translateLeft{
     transform: translate(-250px);
-    /* z-index: 10000; */
 }
 .main .left i.arrow{
     position: absolute;
@@ -472,16 +525,16 @@ a:hover{
 }
 .main .left .upBox .history{
     height: 450px;
-    /* background-color: #2d2b2b; */
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
 }
 .main .left .upBox .history .content{
-    overflow-y: auto;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 .main .left .upBox .history .content::-webkit-scrollbar {
     width: 4px;
@@ -497,14 +550,15 @@ a:hover{
     background: #555;
 }
 .main .left .upBox .history .content div{
+    line-height: 1.1;
     display: flex;
     align-items: center;
     width: 100%;
     font-size: 14px;
     color: white;
-    padding: 6px 7px !important;
-    height: 34px;
+    padding: 6px 7px;
     border-radius: 5px;
+    overflow: hidden;
 }
 .main .left .upBox .history .content div:hover{
     background-color: #202123;
@@ -521,36 +575,38 @@ a:hover{
     margin-right: 7px;
     height: 28px;
 }
+/* ************ Right Box */
 .main .right{
     height: 100%;
     width: calc(100% - 250px);
     background-color: #343541;
     display: flex;
     flex-direction: column;
-    /* justify-content: flex-end; */
-    justify-content: space-between;
-    /*  */
-    gap: 15px;
+    justify-content: flex-end;
     align-items: center;
     padding: 0 20px;
     padding-top: 90px;
     transition: opacity 0s ease;
 }
+.main .right.flexEnd{
+    justify-content: flex-end;
+}
+.main .right.spaceBtwn{
+    justify-content: space-between;
+    gap: 15px;
+}
 .main .right.translateLeft{
     position: fixed;
-    /* transform: translate(-250px); */
     width: 100vw !important;
     transition: width 0.5s ease;
 }
 .main .right.hide{
     opacity: 0;
 }
-.main .right .loadWindow{
+.main .right .newchat{
     width: 100%;
-    max-width: 690px;
-    height: 100%;
-    background-color: #C5C5D2;
 }
+/* ************* logoHead */
 .main .right .logoHead{
     display: flex;
     flex-direction: column;
@@ -565,6 +621,7 @@ a:hover{
     font-size: 20px;
     color: white;
 }
+/* ****************** Suggestion */
 .main .right .suggestion{
     width: 100%;
     display: flex;
@@ -604,6 +661,7 @@ a:hover{
     padding: 6px 6px;
     display: none;
 }
+/* *************** Input Box */
 .main .right  .inputBox{
     position: relative;
     display: flex;
@@ -611,7 +669,6 @@ a:hover{
     align-items: center;
     gap: 9px;
     width: 100%;
-    /* height: 100%; */
     max-width: 690px;
     margin-top: 13px;
     padding-bottom: 10px;
@@ -632,14 +689,27 @@ a:hover{
 .main .right  .inputBox .inp i:hover{
     cursor: pointer;
 }
-.main .right  .inputBox .inp i.fa-microphone{
+.main .right  .inputBox .inp i.micro{
     left: 15px;
     padding: 6px 8.5px;
     
 }
-.main .right  .inputBox .inp i.fa-paper-plane{
+.main .right  .inputBox .inp i.send{
     right: 15px;
 }
+.main .right  .inputBox .inp i.send.canSend:hover{
+    opacity: 0.7;
+}
+.main .right  .inputBox .inp i.send.canSend{
+    background-color: #1586DC !important;
+    color: white !important;
+}
+.main .right  .inputBox .inp i.send.error{
+    background-color: #dc1010 !important;
+    color: white !important;
+}
+
+/* *************** Auto resize text area */
 .main .right  .inputBox .inp textarea{
     border: none;
     outline: none;
@@ -649,11 +719,9 @@ a:hover{
     background-color: transparent;
     border: 1.3px solid rgba(255, 255, 255, 0.143);
     color: white;
-    resize: vertical;
-}
-/* Auto resize text area */
-.main .right  .inputBox .inp textarea{
+    resize: none;
     max-height: 150px;
+    min-height: 41px !important;
     resize: none;
     caret-color: #4671EA;
 }
@@ -671,6 +739,152 @@ a:hover{
     font-size: 10px;
     font-weight: 500;
 } 
+
+/* ***************** Loadwindow */
+.main .right .loadWindow{
+    width: 100%;
+    max-width: 690px;
+    height: 100%;
+    background-color: transparent;
+    overflow-y: auto;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 15px;
+    color: white;
+}
+.main .right .loadWindow .ques-ans{
+    width: 100%;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 10px;
+    letter-spacing: -0.8px;
+    color: white;
+}
+.main .right .loadWindow::-webkit-scrollbar {
+    width: 4px;
+ }
+.main .right .loadWindow::-webkit-scrollbar-track {
+    background: var(--colorBgtheme);
+}
+  
+.main .right .loadWindow::-webkit-scrollbar-thumb{
+    background: #787777;
+}
+.main .right .loadWindow::-webkit-scrollbar-thumb:hover {
+    background: #908f8f;
+    cursor: pointer;
+}
+.main .right .loadWindow .ques .you{
+    display: flex;
+    align-items: center;
+}
+.main .right .loadWindow .ques .you img{
+    width: 21px;
+    margin-right: 10px;
+}
+.main .right .loadWindow .ques .you span{
+    font-size: 15px;
+    font-weight: 700;
+    color: #1586DC;
+}
+.main .right .loadWindow .ques .content{
+    padding: 0 31px;
+    font-size: 15px;
+}
+.main .right .loadWindow .ques .content textarea{
+    border: none;
+    outline: none;
+    width: 100%;
+    resize: none;
+    background-color: transparent;
+    color: white;
+}
+.main .right .loadWindow .ques .content textarea::-webkit-scrollbar {
+    width: 0;
+}
+.main .right .loadWindow .ques .edit{
+    position: relative;
+    padding-left: 31px;
+    margin-top: 5px;
+}
+.main .right .loadWindow .ques .edit .btn{
+    visibility: hidden;
+}
+.main .right .loadWindow .ques .edit i.visible{
+    visibility: visible !important;
+}
+.main .right .loadWindow .ques .edit i.hidden{
+    display: none;
+}
+.main .right .loadWindow .ques .edit .btn:hover{
+    cursor: pointer;
+    transition: all 0.1s ease;
+}
+.main .right .loadWindow .ques .edit i{
+    visibility: hidden;
+    color: gray;
+}
+.main .right .loadWindow .ques .edit i:hover{
+    cursor: pointer;
+    color: rgb(209, 206, 206);
+}
+.main .right .loadWindow .ques .edit span{
+    background-color: #1586DC;
+    font-size: 13px;
+    padding: 4px 6px;
+    border-radius: 6px;
+}
+.main .right .loadWindow .ques .edit span.visible{
+    visibility: visible !important;
+}
+
+.main .right .loadWindow .ans .you{
+    display: flex;
+    align-items: center;
+}
+.main .right .loadWindow .ans .you img{
+    width: 21px;
+    margin-right: 10px;
+}
+.main .right .loadWindow .ans .you span{
+    font-size: 15px;
+    font-weight: 700;
+    color: #1586DC;
+}
+.main .right .loadWindow .ans .content{
+    padding: 0 31px;
+    font-size: 15px;
+}
+.main .right .loadWindow .ans .content textarea{
+    border: none;
+    outline: none;
+    width: 100%;
+    resize: none;
+    background-color: transparent;
+    color: white;
+}
+.main .right .loadWindow .ans .content textarea::-webkit-scrollbar {
+    width: 0;
+}
+.main .right .loadWindow .ans .edit{
+    position: relative;
+    padding-left: 31px;
+    margin-top: 5px;
+}
+.main .right .loadWindow .ans .edit i{
+    color: gray;
+    transition: all 0.5s ease;
+}
+.main .right .loadWindow .ans .edit i:hover{
+    cursor: pointer;
+    color: rgb(209, 206, 206);
+}
+
+/*  */
 @media screen and (max-width:450px) {
     .main .left i.arrow{
         top: 27px;
@@ -705,7 +919,7 @@ a:hover{
         color: #838390;
     }
 }
-@media screen and (max-width:450px){
+@media screen and (max-width:451px){
     .main .right .suggestion .roww:first-child{
         display: none;
     }
@@ -713,6 +927,9 @@ a:hover{
         font-size: 8px;
         font-weight: 500;
     } 
+    .main{
+        overflow: hidden !important;
+    }
 }
 /* ================================================ */
 
