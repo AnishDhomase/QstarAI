@@ -519,7 +519,7 @@ a:hover{
 }
 .main .left button.new.nohide{
     position: relative;
-    z-index: 111111;
+    z-index: 1111;
     transform: translate(250px);
     border: 1px solid rgba(255, 255, 255, 0.143);
 }
@@ -588,6 +588,19 @@ a:hover{
     padding-top: 90px;
     transition: opacity 0s ease;
 }
+/* Unwanted touching problem solution */
+.main .right .overlayTouching.hide{
+    display: none;
+}
+.main .right .overlayTouching{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9999999999999999999;
+    background-color: transparent;
+}
 .main .right.flexEnd{
     justify-content: flex-end;
 }
@@ -601,7 +614,7 @@ a:hover{
     transition: width 0.5s ease;
 }
 .main .right.hide{
-    opacity: 0;
+    opacity: 0 !important;
 }
 .main .right .newchat{
     width: 100%;

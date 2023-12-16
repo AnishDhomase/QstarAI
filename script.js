@@ -42,6 +42,8 @@ const SendBtn = document.querySelector(".main .right  .inputBox .inp i.fa-paper-
 
 const NewChatBox = document.querySelector(".newchat");
 const LoadWindowQA = document.querySelector(".main .right .loadWindow");
+
+const OverlayTouching = document.querySelector(".main .right .overlayTouching");
 // ==========================================================================
 
 
@@ -113,8 +115,10 @@ Finput.addEventListener("focusout",()=>{
 
 // =================== Main page functionality ============================
 // ************ Right box opacity 0 for Mobile initially
+OverlayTouching.classList.add("hide");
 if(window.innerWidth <= 450){
     RightBox.classList.add("hide");
+    OverlayTouching.classList.remove("hide");
 }
 
 // ************ Left Box Toggle
@@ -138,6 +142,7 @@ ArrowCollapser.addEventListener("click",()=>{
     if(window.innerWidth <= 450){
         if(ArrowCollapser.classList.contains("fa-grip-lines-vertical")){
             // 
+            OverlayTouching.classList.add("hide");
             ArrowCollapser.classList.replace("fa-grip-lines-vertical","fa-bars");   
             LeftNewBtn.classList.add("mobile");
 
@@ -152,6 +157,7 @@ ArrowCollapser.addEventListener("click",()=>{
         }
         else{
             //
+            OverlayTouching.classList.remove("hide");
             ArrowCollapser.classList.replace("fa-bars","fa-grip-lines-vertical");   
             LeftNewBtn.classList.remove("mobile");
     
@@ -194,8 +200,10 @@ RightBox.addEventListener("click",()=>{
             LeftNewBtn.classList.add("nohide");
             RightBox.classList.add("translateLeft");
             setTimeout(()=>{
-                RightBox.classList.remove("hide");
+                OverlayTouching.classList.add("hide");
+                RightBox.classList.remove("hide"); 
             },410);
+            
         }
     }
 })
@@ -212,10 +220,10 @@ RightSuggDivArr.forEach((divv)=>{
             I.classList.remove("active");
         }, 100);
 
-        RightBox.classList.replace("flexEnd","spaceBtwn");
-
+        
         NewChatBox.classList.add("notActive");
         LoadWindowQA.classList.remove("notActive");
+        RightBox.classList.replace("flexEnd","spaceBtwn");
 
 
         // text inside Divs
@@ -735,7 +743,7 @@ SendBtn.addEventListener("click",()=>{
         // 
         
         Textarea.value = "";
-        SendBtn.classList.remove("canSend");
+        SendBtn.classList.remove("canSend"); 
     }
 })
 
