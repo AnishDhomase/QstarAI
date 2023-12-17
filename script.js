@@ -43,6 +43,7 @@ const SendBtn = document.querySelector(".main .right  .inputBox .inp i.fa-paper-
 const NewChatBox = document.querySelector(".newchat");
 const LoadWindowQA = document.querySelector(".main .right .loadWindow");
 
+const OverlayTouchingPage = document.querySelector(".overlay");
 const OverlayTouching = document.querySelector(".main .right .overlayTouching");
 // ==========================================================================
 
@@ -56,20 +57,28 @@ const OverlayTouching = document.querySelector(".main .right .overlayTouching");
 LoginBtn.addEventListener("click",()=>{
     LandingPage.classList.add("notActive");
     LandingPage.style.zIndex = "0";
+    OverlayTouchingPage.style.zIndex = "0";
+    MainPage.style.zIndex = "0";
     LoginSignupPage.style.zIndex = "111";
 });
 StartBtn.addEventListener("click",()=>{
+    LoginSignupPage.style.zIndex = "0";
     LandingPage.style.zIndex = "0";
     MainPage.style.zIndex = "111";
+    OverlayTouchingPage.style.zIndex = "50";
     LandingPage.classList.add("notActive");
 });
 BackBtn.addEventListener("click",()=>{
     LandingPage.style.zIndex = "111";
     LoginSignupPage.style.zIndex = "0";
+    OverlayTouchingPage.style.zIndex = "0";
+    MainPage.style.zIndex = "0";
     LandingPage.classList.remove("notActive");
 });
 LoginSignupPageContinueBtn.addEventListener("click",()=>{
+    LandingPage.style.zIndex = "0";
     LoginSignupPage.style.zIndex = "0";
+    OverlayTouchingPage.style.zIndex = "50";
     MainPage.style.zIndex = "111";
 })
 // ===================================================================================
@@ -116,9 +125,11 @@ Finput.addEventListener("focusout",()=>{
 // =================== Main page functionality ============================
 // ************ Right box opacity 0 for Mobile initially
 OverlayTouching.classList.add("hide");
+// LoginSignupPageOverlay.add("hide");
 if(window.innerWidth <= 450){
     RightBox.classList.add("hide");
     OverlayTouching.classList.remove("hide");
+    // LoginSignupPageOverlay.classList.remove("hide");
 }
 
 // ************ Left Box Toggle
@@ -254,6 +265,7 @@ RightSuggDivArr.forEach((divv)=>{
                     RightBox.classList.add("translateLeft");
                     setTimeout(()=>{
                         RightBox.classList.remove("hide");
+                        OverlayTouching.classList.add("hide");
                     },410);
                 }
             }
@@ -478,7 +490,7 @@ Textarea.addEventListener("keyup", e =>{
 })
 
 // ************* openAI API
-// const API_KEY=`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`;
+// const API_KEY=``;
 // const getChatResponse = async function(){
 //     const API_URL = "https://api.openai.com/v1/completions";
 //     const pElement = document.createElement("p");
@@ -543,6 +555,7 @@ SendBtn.addEventListener("click",()=>{
                     RightBox.classList.add("translateLeft");
                     setTimeout(()=>{
                         RightBox.classList.remove("hide");
+                        OverlayTouching.classList.add("hide");
                     },410);
                 }
             }
